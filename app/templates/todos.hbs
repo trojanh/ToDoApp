@@ -1,0 +1,54 @@
+<section id="todoapp">
+	<header id="header">
+		<h1>todos</h1>
+		{{input type="text" id="new-todo" placeholder="What needs to be done?" value=newTitle action="createTodo"}}
+	</header>
+
+	<section id="main">
+		<ul id="todo-list">
+			{{#each model as |todo|}}
+			<li class="{{if todo.isCompleted 'completed'}}{{if todo.isEditing 'editing'}}">
+				{{#if todo.isEditing}}
+				{{edit-todo todo=todo}}
+				{{else}}
+				{{input type="checkbox" class="toggle" checked=todo.isCompleted}}
+				<label{{action "editTodo" todo on="doubleClick"}}>{{todo.title}}</label>
+				<button {{action "removeTodo" todo}} class="destroy"/>
+				<label>{{moment-from-now todo.createdAt interval=1000 }}</label>
+				<br>
+				{{/if}}
+			</li>
+			{{/each}}
+		</ul>
+
+		
+
+		{{input type="checkbox" id="toggle-all" checked=allAreDone}}
+	</section>
+
+	<footer id="footer">
+		<span id="todo-count">
+			<strong>{{remaining}}</strong> {{inflection}} left
+		</span>
+		<ul id="filters">
+			<li>
+				<button {{action "destroyAll" model}} class="destroy" >DeleteAll</button>
+			</li>
+			<li>
+				{{#link-to "todos" activeClass="selected"}}All{{/link-to}}
+			</li>
+			<li>
+				{{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
+			</li>
+			<li>
+				{{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
+			</li>
+		</ul>
+
+		{{#if hasCompleted}}
+		<button id="clear-completed" {{action "clearCompleted"}}>
+			Clear completed ({{completed}})
+		</button>
+		{{/if}}
+	</footer>
+</section>
