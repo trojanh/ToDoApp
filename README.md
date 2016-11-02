@@ -1,6 +1,11 @@
 # To-doapp
 
 This is simple ToDO app made in ember 2.7. You can find the working demo on firebase https://todo-app-40c70.firebaseapp.com
+This project uses Ember Fixuteres to store the data and it doesn't installed with Ember. To install Ember Fixuteres use following command:
+
+ember install ember-data-fixture-adapter
+
+for more on Fixtures check https://github.com/emberjs/ember-data-fixture-adapter
 
 ## Prerequisites
 
