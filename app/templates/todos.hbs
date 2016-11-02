@@ -5,24 +5,7 @@
 	</header>
 
 	<section id="main">
-		<ul id="todo-list">
-			{{#each model as |todo|}}
-			<li class="{{if todo.isCompleted 'completed'}}{{if todo.isEditing 'editing'}}">
-				{{#if todo.isEditing}}
-				{{edit-todo todo=todo}}
-				{{else}}
-				{{input type="checkbox" class="toggle" checked=todo.isCompleted}}
-				<label{{action "editTodo" todo on="doubleClick"}}>{{todo.title}}</label>
-				<button {{action "removeTodo" todo}} class="destroy"/>
-				<label>{{moment-from-now todo.createdAt interval=1000 }}</label>
-				<br>
-				{{/if}}
-			</li>
-			{{/each}}
-		</ul>
-
-		
-
+		{{outlet}}
 		{{input type="checkbox" id="toggle-all" checked=allAreDone}}
 	</section>
 
