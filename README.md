@@ -1,7 +1,6 @@
 # To-doapp
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is simple ToDO app made in ember 2.7. You can find the working demo on firbase https://todo-app-40c70.firebaseapp.com
 
 ## Prerequisites
 
