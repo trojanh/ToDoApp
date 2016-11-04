@@ -1,6 +1,6 @@
 <ul id="todo-list">
   {{#each model as |todo|}}
-  <li class="{{if todo.isCompleted 'completed'}}{{if todo.isEditing 'editing'}}">
+  <li class="{{if todo.isCompleted 'completed' 'editing'}} {{if todo.isEditing 'editing'}}">
     {{#if todo.isEditing}}
     {{edit-todo todo=todo}}
     {{else}}

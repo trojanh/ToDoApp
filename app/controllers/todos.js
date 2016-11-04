@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
 			var todo = this.store.createRecord('todo', {
 				title:title,
 				isCompleted:false,
-				createdAt: new Date()
+				createdAt: new Date(),
 			});
 
       		//clear out text field
