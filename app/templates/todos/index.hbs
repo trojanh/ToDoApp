@@ -9,7 +9,7 @@
     <button {{action "removeTodo" todo}} class="destroy"/>
     {{!-- <label>{{if todo.isCompleted (moment-from-now todo.createdAt interval=1000) }}</label> --}}
     {{#if todo.isCompleted }}
-    <label>Completed at {{ atComplete  }}</label> 
+    <label>Completed at {{ atComplete  }}</label>
     {{/if}}
     <br>
 

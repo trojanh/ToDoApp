@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-
+  
 	actions: {
 		createTodo() {
 			var title = this.get('newTitle');
@@ -38,7 +38,7 @@ export default Ember.Controller.extend({
       	}
       },
 
-      
+
 
       hasCompleted: Ember.computed('completed', function(){
       	return this.get('completed') > 0;
@@ -58,7 +58,7 @@ export default Ember.Controller.extend({
       }),
 
       allAreDone: Ember.computed("model.@each.isCompleted", {
-          get() {
+        get() {
             return this.get('model').get('length') && this.get('model').isEvery('isCompleted');
       },
 
@@ -69,6 +69,6 @@ export default Ember.Controller.extend({
       }
 })
 
-      
+
 
 });
