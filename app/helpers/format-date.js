@@ -4,7 +4,7 @@
 		// var defaultDate=new Date(moment());
 		// alert(defaultDate);
 		// alert(moment().format('YYYY')+'-'+moment().format('MM')+'-'+moment().format('DD'));
-		return moment().format('YYYY-MM-DD');
+		return params.format('hh:mm:ss');/*'YYYY-MM-DD');*/
 	}
 
 	export default Ember.Helper.helper(formatDate);

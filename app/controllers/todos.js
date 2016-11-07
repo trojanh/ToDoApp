@@ -11,7 +11,7 @@ export default Ember.Controller.extend({
 			var todo = this.store.createRecord('todo', {
 				title:title,
 				isCompleted:false,
-				createdAt: new Date(),
+				//createdAt: new Date(),
 			});
 
       		//clear out text field
@@ -58,7 +58,7 @@ export default Ember.Controller.extend({
       }),
 
       allAreDone: Ember.computed("model.@each.isCompleted", {
-        get() {
+          get() {
             return this.get('model').get('length') && this.get('model').isEvery('isCompleted');
       },
 
