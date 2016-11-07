@@ -7,10 +7,13 @@
     {{input type="checkbox" class="toggle" checked=todo.isCompleted}}
     <label{{action "editTodo" todo on="doubleClick"}}>{{todo.title}}</label>
     <button {{action "removeTodo" todo}} class="destroy"/>
-    {{!--  <label>{{moment-from-now todo.createdAt interval=1000 }}</label> --}}
-    <label>{{format-date todo.createdAt  }}</label> 
+    <label>{{moment-from-now todo.createdAt interval=1000 }}</label>
+    <label>{{format-date todo.createdAt }}</label> 
     <br>
+
     {{/if}}
+    <hr>
   </li>
+
   {{/each}}
 </ul>

@@ -19,12 +19,12 @@ export default Ember.Controller.extend({
       		todo.save();
       	},
 
-      	editTodo(todo) {
-      		todo.set('isEditing', true);
-      	},
-      	removeTodo(todo) {
-      		todo.destroyRecord();
-      	},
+      	// editTodo(todo) {
+      	// 	todo.set('isEditing', true);
+      	// },
+      	// removeTodo(todo) {
+      	// 	todo.destroyRecord();
+      	// },
 
       	destroyAll(model) {
       		model.invoke('deleteRecord');
