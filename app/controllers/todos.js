@@ -50,7 +50,7 @@ export default Ember.Controller.extend({
 
   allAreDone: Ember.computed("model.@each.isCompleted", {
     get() {
-      return this.get('model').get('length') && this.get('model').isE('isCompleted');
+      return this.get('model').get('length') && this.get('model').isEvery('isCompleted');
   },
 
   set(key, value) {
